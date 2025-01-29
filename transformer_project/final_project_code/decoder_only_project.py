@@ -51,8 +51,7 @@ def collate_fn(batch):
 # Function to create future mask (upper triangular matrix)
 def create_future_mask(seq_len, batch_size, num_heads):
     mask = torch.triu(torch.ones(seq_len, seq_len), diagonal=1).bool()  # Upper triangular matrix
-    # Expand mask to match batch size and number of attention heads
-    mask = mask.unsqueeze(0).unsqueeze(0)  # Shape: [1, 1, seq_len, seq_len]
+    mask = mask.unsqueeze(0).unsqueeze(0) 
     mask = mask.expand(batch_size, num_heads, seq_len, seq_len)  # Shape: [batch_size, num_heads, seq_len, seq_len]
     return mask
 
