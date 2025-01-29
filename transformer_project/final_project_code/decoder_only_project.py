@@ -10,7 +10,7 @@ from transformer_project.modelling.optimizer import initialize_optimizer
 from transformer_project.modelling.lr_scheduler import CustomLRScheduler
 from transformer_project.modelling.transformer_model import PositionalEncoding
 
-# Custom Dataset for Fibonacci Sequence
+# Dataset for Fibonacci Sequence
 def generate_fibonacci_data(max_len=10, num_samples=1000):
     data = []
     for _ in range(num_samples):
