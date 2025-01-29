@@ -35,7 +35,6 @@ def get_cleaned_data(subset_percentage=None, mode='train'):
     dataset = load_dataset("wmt17", "de-en")
     dataset = dataset.shuffle(seed=1)
     num_samples = int(len(dataset[mode]) * subset_percentage)
-    num_samples = 50 ########################################################################
     dataset[mode] = dataset[mode].select(range(num_samples))
     cleaned_data = clean_dataset(dataset, mode)
     return cleaned_data
